@@ -21,7 +21,6 @@
     <div class="circle circle-two"></div>
   </div>
   <div class="theme-btn-container"></div>
-  <button class="position-button">Linkedin</button>
   </body>
 </template>
 

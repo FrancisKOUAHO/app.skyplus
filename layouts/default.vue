@@ -23,7 +23,6 @@
         <div class="clouds">
           <accueil/>
         </div>
-
       </section>
     </main>
     <navigations-folders/>
@@ -32,6 +31,7 @@
 
 <script>
 import Accueil from "~/pages/Accueil";
+
 export default {
   name: "default",
   components: {Accueil}
@@ -59,7 +59,7 @@ html, body {
 }
 
 body {
-  background: radial-gradient(farthest-side at top left, #ddedfc, transparent), radial-gradient(farthest-side at top right, #e3c2f2, transparent), radial-gradient(farthest-side at bottom left, #fffbf5, transparent), radial-gradient(farthest-corner at bottom right, #fbcdcd, transparent);
+  background: radial-gradient(farthest-side at top left, #cf2d59, transparent), radial-gradient(farthest-side at top right, #e3c2f2, transparent), radial-gradient(farthest-side at bottom left, #fffbf5, transparent), radial-gradient(farthest-corner at bottom right, #cf2d59, transparent);
 }
 
 button, input {
@@ -193,7 +193,7 @@ main > header button {
   width: 42px;
   border-radius: 10px;
   margin-left: 20px;
-  background: #e0c4f4;
+  background: #cf2d59;;
   cursor: pointer;
 }
 
@@ -355,7 +355,7 @@ main > header button {
   font-size: 16px;
   font-weight: 500;
   font-family: "Poppins";
-  color: #9d6af8;
+  color: #cf2d59;
 }
 
 #my-cloud footer > .chart :last-child {
@@ -368,12 +368,12 @@ main > header button {
   font-size: 18px;
   font-weight: 500;
   font-family: "Poppins";
-  color: #1562d6;
+  color: #cf2d59;
 }
 
 #dropbox footer > .chart :last-child {
   width: calc(29% / 1.2);
-  background: #a375f7;
+  background: #cf2d59;
 }
 
 #google-drive header > div {
@@ -619,7 +619,7 @@ tr:nth-child(3) td > div {
   font-weight: 300;
   font-family: "Poppins";
   color: #fff;
-  background: #f8796b;
+  background: #cf2d59;
   display: block;
   top: 4px;
   right: 6px;
@@ -668,7 +668,7 @@ tr:nth-child(3) td > div {
   font-size: 16px;
   font-weight: 300;
   font-family: "Poppins";
-  color: #a995cf;
+  color: #cf2d59;
 }
 
 .folder {
@@ -759,7 +759,7 @@ tr:nth-child(3) td > div {
   align-items: center;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  background: #b581db;
+  background: #cf2d59;
   color: white;
   right: -5px;
 }
@@ -792,7 +792,7 @@ tr:nth-child(3) td > div {
   font-size: 26px;
   font-weight: 500;
   font-family: "Poppins";
-  color: #584871;
+  color: #cf2d59;
   letter-spacing: -1px;
   margin: 0;
 }
@@ -811,7 +811,7 @@ tr:nth-child(3) td > div {
   font-family: "Poppins";
   color: #fff;
   margin-top: 10px;
-  background: #9d6af8;
+  background: #cf2d59;
   border-radius: 30px;
   padding: 8px 20px;
 }

@@ -4,8 +4,6 @@
       <div>
         LinkedIn Profile Scraper
       </div>
-
-
       <div class="wrapper">
         <div class="search-input">
           <a href="" target="_blank" hidden></a>
@@ -16,12 +14,10 @@
           <div class="icon"><i class="fas fa-search"></i></div>
         </div>
       </div>
-
-
     </header>
     <div class="bar">
-        <div class="percentage has-tip"  style="width: 50%" data-perc="0%">
-        </div>
+      <div class="percentage has-tip" style="width: 50%" data-perc="0%">
+      </div>
     </div>
     <div>
       <button class="barre-loading">Commencer</button>
@@ -46,7 +42,7 @@ export default {
   border-radius: 0.5em;
   position: relative;
   background: #f2f2f2;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1)
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
 }
 
 .bar .percentage {
@@ -72,7 +68,7 @@ export default {
   transition: opacity 0.1s;
 }
 
-button.barre-loading{
+button.barre-loading {
   position: relative;
   padding: 1rem;
   background-color: #cf2d59;
@@ -109,31 +105,31 @@ button.barre-loading{
   transform: translateX(50%) translateY(100%) translateY(10px);
 }
 
-::selection{
+::selection {
   color: #fff;
   background: #664AFF;
 }
 
-.wrapper .search-input{
+.wrapper .search-input {
   background: #fff;
   width: 100%;
   border-radius: 5px;
   position: relative;
-  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
 }
 
-.search-input input{
+.search-input input {
   height: 43px;
- padding: 1px;
+  padding: 1px;
   font-size: 18px;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.search-input.active input{
+.search-input.active input {
   border-radius: 5px 5px 0 0;
 }
 
-.search-input .autocom-box{
+.search-input .autocom-box {
   padding: 0;
   opacity: 0;
   pointer-events: none;
@@ -141,13 +137,13 @@ button.barre-loading{
   overflow-y: auto;
 }
 
-.search-input.active .autocom-box{
+.search-input.active .autocom-box {
   padding: 10px 8px;
   opacity: 1;
   pointer-events: auto;
 }
 
-.autocom-box li{
+.autocom-box li {
   list-style: none;
   padding: 8px 12px;
   display: none;
@@ -156,14 +152,15 @@ button.barre-loading{
   border-radius: 3px;
 }
 
-.search-input.active .autocom-box li{
+.search-input.active .autocom-box li {
   display: block;
 }
-.autocom-box li:hover{
+
+.autocom-box li:hover {
   background: #efefef;
 }
 
-.search-input .icon{
+.search-input .icon {
   position: absolute;
   right: 0px;
   top: 0px;
@@ -175,7 +172,6 @@ button.barre-loading{
   color: #644bff;
   cursor: pointer;
 }
-
 
 
 </style>
