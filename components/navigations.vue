@@ -4,34 +4,9 @@
       <img src="/logo.png" alt="logo" width="50" class="logo">
     </div>
     <div style="position: absolute; margin-top: 24rem">
-      <div>
-        <nuxt-link to="">
-          <i class="las la-home icon"></i>
-        </nuxt-link>
-      </div>
-      <div>
-        <nuxt-link to="">
-          <i class="las la-users icon"></i>
-        </nuxt-link>
-      </div>
-      <div>
-        <nuxt-link to="">
-          <i class="las la-rocket icon"></i>
-        </nuxt-link>
-      </div>
-      <div>
-        <nuxt-link to="">
-          <i class="las la-comment-alt icon"></i>
-        </nuxt-link>
-      </div>
-      <div>
-        <nuxt-link :to="{name: 'setting'}">
-          <i class="las la-cog icon"></i>
-        </nuxt-link>
-      </div>
-      <div>
-        <nuxt-link to="">
-          <i class="las la-sign-out-alt icon"></i>
+      <div v-for="(item) in items">
+        <nuxt-link :to="{name: item.name}">
+          <i :key="item.id" :class="[{ active : active_el == item.id}, [item.classStyle]]" @click="activate(item.id)"></i>
         </nuxt-link>
       </div>
     </div>
@@ -40,7 +15,25 @@
 
 <script>
 export default {
-  name: "navigations"
+  name: "navigations",
+  data() {
+    return {
+      active_el:0,
+      items: [
+        {"id": "1", "classStyle": "las la-home icon", "name": "accueil"},
+        {"id": "2", "classStyle": "las la-users icon", "name": "accueil"},
+        {"id": "3", "classStyle": "las la-rocket icon", "name": "accueil"},
+        {"id": "4", "classStyle": "las la-comment-alt icon", "name": "accueil"},
+        {"id": "5", "classStyle": "las la-cog icon", "name": "setting"},
+        {"id": "6", "classStyle": "las la-sign-out-alt icon", "name": "accueil"}
+      ],
+    }
+  },
+  methods: {
+    activate: function (el) {
+      this.active_el = el;
+    }
+  }
 }
 </script>
 
@@ -50,6 +43,10 @@ export default {
   font-weight: 400;
   font-family: "Poppins";
   margin: 40px 0 30px 0;
+}
+
+.active {
+  color: #cf2d59;
 }
 
 .icon:hover {
