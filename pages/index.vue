@@ -9,8 +9,10 @@
       <form>
         <input type="text" placeholder="email ou pseudo"/>
         <input type="password" placeholder="mot de passe "/>
-        <nuxt-link :to="{name: 'Accueil'}"></nuxt-link>
-        <button class="opacity">Connexion</button>
+        <nuxt-link :to="{name: 'accueil'}">
+          <button class="opacity">Connexion</button>
+        </nuxt-link>
+
       </form>
       <div class="register-forget opacity">
         <a href="">S'identifier</a>
@@ -33,7 +35,6 @@ export default {
   --color: #ffffff;
   --primary-color: #332A38;
 }
-
 
 a {
   text-decoration: none;

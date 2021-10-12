@@ -1,7 +1,9 @@
 <template>
   <nav id="nav">
     <div style="position: absolute; margin-top: 3rem">
-      <img src="/logo.png" alt="logo" width="50" class="logo">
+      <nuxt-link :to="{name: 'accueil'}">
+        <img src="/logo.png" alt="logo" width="50" class="logo">
+      </nuxt-link>
     </div>
     <div style="position: absolute; margin-top: 24rem">
       <div v-for="(item) in items">
