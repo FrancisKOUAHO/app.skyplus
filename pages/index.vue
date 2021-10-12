@@ -1,5 +1,4 @@
 <template>
-  <body>
   <div class="login-container">
     <div class="circle circle-one"></div>
     <div class="form-container">
@@ -20,8 +19,6 @@
     </div>
     <div class="circle circle-two"></div>
   </div>
-  <div class="theme-btn-container"></div>
-  </body>
 </template>
 
 <script>
@@ -37,19 +34,6 @@ export default {
   --primary-color: #332A38;
 }
 
-body {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "poppins";
-  background: var(--background);
-  color: var(--color);
-  letter-spacing: 1px;
-  transition: background 0.2s ease;
-  -webkit-transition: background 0.2s ease;
-  -moz-transition: background 0.2s ease;
-  -ms-transition: background 0.2s ease;
-  -o-transition: background 0.2s ease;
-}
 
 a {
   text-decoration: none;
@@ -59,7 +43,8 @@ a {
 h1 {
   font-size: 2.5rem;
 }
-.la-home{
+
+.la-home {
   position: relative;
   right: 5rem;
 }
@@ -135,7 +120,7 @@ h1 {
   -o-transition: all 0.1s ease-in-out;
 }
 
-.position-button{
+.position-button {
   position: relative;
   top: 15rem;
   right: 30rem;
