@@ -21,7 +21,7 @@
           <button>Mise à niveau immédiate</button>
         </div>
         <div class="clouds">
-          <accueil/>
+          <nuxt/>
         </div>
       </section>
     </main>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Accueil from "~/pages/Accueil";
+import Accueil from "@/pages/accueil";
 
 export default {
   name: "default",
