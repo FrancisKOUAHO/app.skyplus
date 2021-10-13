@@ -5,20 +5,21 @@
       <img
         src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
         alt="illustration" class="illustration"/>
-      <h1 class="opacity">Connexion</h1>
+      <h1 class="opacity">Inscription</h1>
       <form>
-        <input type="email" placeholder="email ou pseudo"/>
+        <input type="text" placeholder="nom"/>
+        <input type="text" placeholder="prenom"/>
+        <input type="email" placeholder="email"/>
         <input type="password" placeholder="mot de passe "/>
         <nuxt-link :to="{name: 'accueil'}">
-          <button class="opacity">Connexion</button>
+          <button class="opacity">S'inscrire</button>
         </nuxt-link>
 
       </form>
       <div class="register-forget opacity">
-        <nuxt-link :to="{name: 'register'}">
-          S'inscrire
+        <nuxt-link :to="{name: 'index'}">
+          S'identifier
         </nuxt-link>
-        <a href="">mot de passe oubliée ?</a>
       </div>
     </div>
     <div class="circle circle-two"></div>
@@ -27,6 +28,7 @@
 
 <script>
 export default {
+  name: "register",
   layout: 'nothing'
 }
 </script>

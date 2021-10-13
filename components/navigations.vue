@@ -8,7 +8,8 @@
     <div style="position: absolute; margin-top: 24rem">
       <div v-for="(item) in items">
         <nuxt-link :to="{name: item.name}">
-          <i :key="item.id" :class="[{ active : active_el == item.id}, [item.classStyle]]" @click="activate(item.id)"></i>
+          <i :key="item.id" :class="[{ active : active_el == item.id}, [item.classStyle]]"
+             @click="activate(item.id)"></i>
         </nuxt-link>
       </div>
     </div>
@@ -20,14 +21,14 @@ export default {
   name: "navigations",
   data() {
     return {
-      active_el:0,
+      active_el: 0,
       items: [
         {"id": "1", "classStyle": "las la-home icon", "name": "accueil"},
         {"id": "2", "classStyle": "las la-users icon", "name": "prospects"},
-        {"id": "3", "classStyle": "las la-rocket icon", "name": "accueil"},
-        {"id": "4", "classStyle": "las la-comment-alt icon", "name": "accueil"},
+        {"id": "3", "classStyle": "las la-rocket icon", "name": "compaigns"},
+        {"id": "4", "classStyle": "las la-comment-alt icon", "name": "messages"},
         {"id": "5", "classStyle": "las la-cog icon", "name": "setting"},
-        {"id": "6", "classStyle": "las la-sign-out-alt icon", "name": "accueil"}
+        {"id": "6", "classStyle": "las la-sign-out-alt icon", "name": "logout"}
       ],
     }
   },

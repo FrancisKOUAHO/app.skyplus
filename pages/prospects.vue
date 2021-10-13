@@ -6,25 +6,36 @@
           <h1>Prospects</h1>
         </div>
         <div>
-          <p class="listes">Toutes les listes (5)</p>
+          <p class="listes">Toutes les listes (0)</p>
         </div>
       </header>
       <footer>
         <div class="form">
-          <input id="new-player" placeholder="Player Name">
-          <button type="submit" id="btn-player">Importer</button>
+          <input type="file" value="Importer" id="actual-btn" hidden>
+          <label for="actual-btn" class="button">Importer</label>
         </div>
         <table>
           <thead>
           <tr>
+            <th>photo</th>
             <th>nom</th>
             <th>titre</th>
             <th>status</th>
-            <th>actions</th>
             <th>tags</th>
+            <th width="33%">actions</th>
           </tr>
           </thead>
           <tbody id="player-table">
+          <tr>
+            <td class="profile"><img src=""></td>
+            <td>nom</td>
+            <td>statut</td>
+            <td>statut</td>
+            <td>statut</td>
+            <td>
+              <i v-for="icon in icons" :key="icon.id" :class="[{ active : active_el == icon.id}, [icon.classStyle]]" @click="activate(icon.id)"></i>
+            </td>
+          </tr>
           </tbody>
         </table>
         <div id="winner"></div>
@@ -35,12 +46,36 @@
 
 <script>
 export default {
-  name: "prospects"
+  name: "prospects",
+  data() {
+    return {
+      active_el:0,
+      icons: [
+        {"id": "1", "classStyle": "las la-home icon"},
+        {"id": "2", "classStyle": "las la-users icon"},
+        {"id": "3", "classStyle": "las la-rocket icon"},
+        {"id": "4", "classStyle": "las la-comment-alt icon"},
+        {"id": "5", "classStyle": "las la-cog icon"},
+        {"id": "6", "classStyle": "las la-sign-out-alt icon"}
+      ],
+    }
+  },
+  methods: {
+    activate: function (el) {
+      this.active_el = el;
+    }
+  }
 }
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;600&display=swap");
+
+.icon {
+  width: 20%;
+  color: #ffffff;
+}
+
 table {
   width: 100%;
   min-width: 400px;
@@ -82,7 +117,7 @@ td {
   margin-top: 15px;
 }
 
-button {
+.button {
   margin: 5px;
   padding: 12px;
   cursor: pointer;
@@ -93,7 +128,7 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+.button:hover {
   background-color: #ffffff;
   color: #cf2d59;
   border: 1px solid #cf2d59;
@@ -121,7 +156,15 @@ input {
   height: 35rem !important;
 }
 
-.listes{
+.listes {
   font-size: 12px;
+}
+
+.active {
+  color: #34a853;
+}
+
+.icon:hover {
+  color: #34a853;
 }
 </style>

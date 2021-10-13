@@ -16,12 +16,25 @@
         </div>
       </header>
       <div class="bar">
-        <div class="percentage has-tip" style="width: 50%" data-perc="0%">
+        <div class="percentage has-tip" role="progressbar" :aria-valuenow="progress" :aria-valuemin="`${progress}%`"
+             aria-valuemax="100" :style="{'width': `${progress}%`}" :data-perc="`${progress}%`">
         </div>
       </div>
-      <div>
-        <button @click="scrappingDataLinkedin" class="barre-loading">Commencer</button>
-      </div>
+      <center>
+        <div class="hello">
+          <h3>statusMessage</h3>
+          <button-spinner
+            @click.native="scrappingDataLinkedin"
+            v-bind="{isLoading}"
+            :disabled="isLoading"
+            class="button-spinner-data"
+            style="padding:1.5rem;color:#cf2d59;border-radius: 5px;border: 1px solid #cf2d59;"
+          >
+            Commencer
+          </button-spinner>
+        </div>
+      </center>
+
       <footer>
       </footer>
     </section>
@@ -35,34 +48,68 @@
       <h4>Dropbox</h4>
       <footer>
         <div className="stat">
-          <p>{{incidents}}</p>
-        </div>
-        <div className="chart">
-          <div></div>
-          <div></div>
+          {{DATA}}
         </div>
       </footer>
     </section>
+
   </div>
 </template>
 
 <script>
 import axios from "axios"
+import ButtonSpinner from 'vue-button-spinner'
+
+
 export default {
   name: "Accueil",
+  components: {
+    ButtonSpinner
+  },
   data() {
     return {
-      incidents: [],
+      DATA: [],
+      progress: 0,
+      completed: false,
+      tempo: 50,
+      isLoading: false,
+      isActive: false,
+      message : ""
     };
   },
   methods: {
-     async scrappingDataLinkedin() {
-       await axios.get('http://localhost:7000/scrappin-data-linkedin')
-         .then(response => (this.incidents = response.data))
+    async scrappingDataLinkedin() {
+      this.isActive = true
+      this.isLoading = true
+      await axios.get('http://localhost:7000/scrappin-data-linkedin')
+        .then((response) => {
+          this.DATA = response.data
+          this.timer(this.tempo)
+          this.isActive = false
+          this.isLoading = false
+        }).catch((e) => {
+          return `Erreur ${e}`
+        })
+
     },
 
+    timer: function (tempo) {
+      let vm = this;
+      let setIntervalRef = setInterval(function () {
+        vm.progress++;
+        if (vm.progress === 100) {
+          clearInterval(setIntervalRef);
+          vm.completed = true;
+        }
+      }, tempo);
+    },
+    restart: function () {
+      this.completed = false;
+      this.progress = 0;
+      this.timer(this.tempo);
+    },
     mounted() {
-       this.scrappingDataLinkedin()
+      this.scrappingDataLinkedin()
     }
   }
 }
@@ -103,7 +150,7 @@ export default {
   transition: opacity 0.1s;
 }
 
-button.barre-loading {
+button-spinner.barre-loading {
   position: relative;
   padding: 1rem;
   background-color: #cf2d59;
@@ -114,6 +161,7 @@ button.barre-loading {
   top: 2rem;
 
 }
+
 
 .has-tip:after {
   content: attr(data-perc);
@@ -206,6 +254,11 @@ button.barre-loading {
   font-size: 20px;
   color: #644bff;
   cursor: pointer;
+}
+
+.vue-btn:hover {
+  background: #cf2d59;
+  color: #ffffff !important;
 }
 
 
