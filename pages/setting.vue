@@ -1,22 +1,26 @@
 <template>
-  <section id="my-cloud">
-    <header>
-      <div>
-        Mon compte
-      </div>
-    </header>
-    <form class="form">
-      <label>
-        <input type="text" name="fname" value="Email">
-      </label>
+  <div class="clouds">
+    <section id="my-cloud">
+      <header>
+        <div>
+          Mon compte
+        </div>
+      </header>
+      <form class="form">
+        <label>
+          <input type="text" name="fname" value="Email">
+        </label>
 
-      <label>
-        <input type="text"  name="lname" value="mot de passe">
-      </label>
-    </form>
-    <footer>
-    </footer>
-  </section>
+        <label>
+          <input type="text" name="lname" value="mot de passe">
+        </label>
+
+      </form>
+
+      <footer>
+      </footer>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -26,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.form{
+.form {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
@@ -43,5 +47,8 @@ input[type=text] {
   outline: none;
 }
 
+input[type=text]:focus {
+  border: 3px solid #cf2d59;
+}
 
 </style>

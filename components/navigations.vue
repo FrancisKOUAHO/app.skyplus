@@ -23,7 +23,7 @@ export default {
       active_el:0,
       items: [
         {"id": "1", "classStyle": "las la-home icon", "name": "accueil"},
-        {"id": "2", "classStyle": "las la-users icon", "name": "accueil"},
+        {"id": "2", "classStyle": "las la-users icon", "name": "prospects"},
         {"id": "3", "classStyle": "las la-rocket icon", "name": "accueil"},
         {"id": "4", "classStyle": "las la-comment-alt icon", "name": "accueil"},
         {"id": "5", "classStyle": "las la-cog icon", "name": "setting"},

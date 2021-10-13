@@ -20,9 +20,7 @@
             sites or application.<br/>Only that ? Oh no, there are many more.</p>
           <button>Mise à niveau immédiate</button>
         </div>
-        <div class="clouds">
           <nuxt/>
-        </div>
       </section>
     </main>
     <navigations-folders/>
@@ -262,7 +260,7 @@ main > header button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-shrink: 0;
   margin-top: 20px;
 }
@@ -271,8 +269,8 @@ main > header button {
   width: 100%;
   background: white;
   border-radius: 20px;
-  margin-right: 20px;
   height: 17rem;
+  margin-top: 20px;
 }
 
 .clouds section:last-child {

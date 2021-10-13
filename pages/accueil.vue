@@ -1,35 +1,70 @@
 <template>
-  <section id="my-cloud">
-    <header>
-      <div>
-        LinkedIn Profile Scraper
-      </div>
-      <div class="wrapper">
-        <div class="search-input">
-          <a href="" target="_blank" hidden></a>
-          <input type="text" placeholder="Type to search..">
-          <div class="autocom-box">
-            <!-- here list are inserted from javascript -->
+  <div class="clouds">
+    <section id="my-cloud">
+      <header>
+        <div>
+          LinkedIn Profile Scraper
+        </div>
+        <div class="wrapper">
+          <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Type to search..">
+            <div class="autocom-box">
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
           </div>
-          <div class="icon"><i class="fas fa-search"></i></div>
+        </div>
+      </header>
+      <div class="bar">
+        <div class="percentage has-tip" style="width: 50%" data-perc="0%">
         </div>
       </div>
-    </header>
-    <div class="bar">
-      <div class="percentage has-tip" style="width: 50%" data-perc="0%">
+      <div>
+        <button @click="scrappingDataLinkedin" class="barre-loading">Commencer</button>
       </div>
-    </div>
-    <div>
-      <button class="barre-loading">Commencer</button>
-    </div>
-    <footer>
-    </footer>
-  </section>
+      <footer>
+      </footer>
+    </section>
+    <section id="dropbox">
+      <header>
+        <div>
+          <i className="fab fa-dropbox"></i>
+        </div>
+        <i className="las la-ellipsis-v"></i>
+      </header>
+      <h4>Dropbox</h4>
+      <footer>
+        <div className="stat">
+          <p>{{incidents}}</p>
+        </div>
+        <div className="chart">
+          <div></div>
+          <div></div>
+        </div>
+      </footer>
+    </section>
+  </div>
 </template>
 
 <script>
+import axios from "axios"
 export default {
-  name: "Accueil"
+  name: "Accueil",
+  data() {
+    return {
+      incidents: [],
+    };
+  },
+  methods: {
+     async scrappingDataLinkedin() {
+       await axios.get('http://localhost:7000/scrappin-data-linkedin')
+         .then(response => (this.incidents = response.data))
+    },
+
+    mounted() {
+       this.scrappingDataLinkedin()
+    }
+  }
 }
 </script>
 
