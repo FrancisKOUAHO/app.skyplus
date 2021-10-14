@@ -36,6 +36,9 @@ export default {
     activate: function (el) {
       this.active_el = el;
     }
+  },
+  mounted() {
+    this.activate()
   }
 }
 </script>

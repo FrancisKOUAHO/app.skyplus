@@ -76,6 +76,10 @@ export default {
         link.click();
       });
     }
+  },
+
+  mounted() {
+    this.downloadExport()
   }
 }
 </script>

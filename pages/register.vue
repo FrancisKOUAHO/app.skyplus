@@ -49,11 +49,6 @@ h1 {
   font-size: 2.5rem;
 }
 
-.la-home {
-  position: relative;
-  right: 5rem;
-}
-
 
 .login-container {
   position: relative;
@@ -125,34 +120,6 @@ h1 {
   -o-transition: all 0.1s ease-in-out;
 }
 
-.position-button {
-  position: relative;
-  top: 15rem;
-  right: 30rem;
-  background-color: var(--primary-color);
-  color: var(--color);
-  display: block;
-  padding: 13px;
-  border-radius: 5px;
-  outline: none;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  font-weight: bold;
-  width: 100%;
-  cursor: pointer;
-  margin-bottom: 2rem;
-  transition: all 0.1s ease-in-out;
-  border: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  opacity: 0.9;
-}
 
 .login-container form button:hover {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
@@ -214,13 +181,6 @@ h1 {
 .opacity {
   opacity: 0.9;
 }
-
-.theme-btn-container {
-  position: absolute;
-  left: 0;
-  bottom: 2rem;
-}
-
 
 @keyframes wobble {
   0% {

@@ -87,6 +87,7 @@ export default {
           this.timer(this.tempo)
           this.isActive = false
           this.isLoading = false
+          this.restart()
         }).catch((e) => {
           return `Erreur ${e}`
         })
@@ -107,9 +108,6 @@ export default {
       this.completed = false;
       this.progress = 0;
       this.timer(this.tempo);
-    },
-    mounted() {
-      this.scrappingDataLinkedin()
     }
   }
 }

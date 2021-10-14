@@ -17,21 +17,23 @@
         <table>
           <thead>
           <tr>
-            <th>photo</th>
-            <th>nom</th>
-            <th>titre</th>
-            <th>status</th>
-            <th>tags</th>
+            <th>Photo</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Titre</th>
+            <th>Status</th>
+            <th>Tags</th>
             <th width="33%">actions</th>
           </tr>
           </thead>
           <tbody id="player-table">
           <tr>
-            <td class="profile"><img src=""></td>
-            <td>nom</td>
-            <td>statut</td>
-            <td>statut</td>
-            <td>statut</td>
+            <td class="profile">Photo<img src=""></td>
+            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Titre</td>
+            <td>Status</td>
+            <td>Tags</td>
             <td>
               <i v-for="icon in icons" :key="icon.id" :class="[{ active : active_el == icon.id}, [icon.classStyle]]" @click="activate(icon.id)"></i>
             </td>
@@ -64,6 +66,9 @@ export default {
     activate: function (el) {
       this.active_el = el;
     }
+  },
+  mounted() {
+    this.activate()
   }
 }
 </script>
@@ -99,16 +104,16 @@ img:hover {
 
 th {
   border: 1px solid #cf2d59;
-  background-color: #ffffff;
-  color: #cf2d59;
+  background-color: #cf2d59;
+  color: #ffffff;
   text-transform: uppercase;
   padding: 10px;
 }
 
 tr,
 td {
-  border: none;
-  background-color: #cf2d59;
+  border: 1px solid #cf2d59;
+  background-color: #ffffff;
 }
 
 #winner {
