@@ -1,14 +1,14 @@
 <template>
   <div class="clouds">
     <div class="more-memory">
-      <img src="https://drive.google.com/uc?id=1w9g2YfmhOJ5sntZroDP7dZhVmDHBHykH" alt=""/>
+      <img src="/storage-dashboard-exploration-1.png" alt=""/>
       <h3>Comment ça marche ?</h3>
       <p>In addition to our automtic backup feature, you can experience integration with other well-known storage
         sites or application.<br/>Only that ? Oh no, there are many more.</p>
       <button>Mise à niveau immédiate</button>
     </div>
 
-    <h4 class="title position">Les differents application proposé par Skyplys</h4>
+    <h4 class="title position">Les differents application proposé par Skyplus</h4>
 
     <div class="container">
       <nuxt-link v-for="(application, index) in applications" :to="{name: application.name}"  class="card1" href="#" :key="index">
@@ -21,8 +21,6 @@
         </div>
       </nuxt-link>
     </div>
-
-
   </div>
 </template>
 
@@ -144,12 +142,17 @@ p.description{
 
 .card1:hover p {
   transition: all 0.3s ease-out;
-  color: #ffffff !important;
+  color: ghostwhite !important;
 }
 
 .card1:hover h3 {
   transition: all 0.3s ease-out;
-  color: #ffffff !important;
+  color: ghostwhite !important;
+}
+
+.card1:hover h5 {
+  transition: all 0.3s ease-out;
+  color: ghostwhite !important;
 }
 
 </style>

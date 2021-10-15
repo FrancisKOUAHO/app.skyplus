@@ -184,7 +184,7 @@ main > header button {
   width: 42px;
   border-radius: 10px;
   margin-left: 20px;
-  background: #cf2d59;;
+  background: #cf2d59;
   cursor: pointer;
 }
 
