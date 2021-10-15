@@ -1,263 +1,155 @@
 <template>
   <div class="clouds">
-    <section id="my-cloud">
-      <header>
-        <div>
-          LinkedIn Profile Scraper
-        </div>
-        <div class="wrapper">
-          <div class="search-input">
-            <a href="" target="_blank" hidden></a>
-            <input type="text" placeholder="Type to search..">
-            <div class="autocom-box">
-            </div>
-            <div class="icon"><i class="fas fa-search"></i></div>
+    <div class="more-memory">
+      <img src="https://drive.google.com/uc?id=1w9g2YfmhOJ5sntZroDP7dZhVmDHBHykH" alt=""/>
+      <h3>Comment ça marche ?</h3>
+      <p>In addition to our automtic backup feature, you can experience integration with other well-known storage
+        sites or application.<br/>Only that ? Oh no, there are many more.</p>
+      <button>Mise à niveau immédiate</button>
+    </div>
+
+    <h4 class="title position">Les differents application proposé par Skyplys</h4>
+
+    <div class="container">
+      <nuxt-link v-for="(application, index) in applications" :to="{name: application.name}"  class="card1" href="#" :key="index">
+        <h5 class="title">{{ application.title }}</h5>
+        <p class="small description">{{ application.description }}</p>
+        <div class="go-corner" href="#">
+          <div class="go-arrow">
+            →
           </div>
         </div>
-      </header>
-      <div class="bar">
-        <div class="percentage has-tip" role="progressbar" :aria-valuenow="progress" :aria-valuemin="`${progress}%`"
-             aria-valuemax="100" :style="{'width': `${progress}%`}" :data-perc="`${progress}%`">
-        </div>
-      </div>
-      <center>
-        <div class="hello">
-          <h3>statusMessage</h3>
-          <button-spinner
-            @click.native="scrappingDataLinkedin"
-            v-bind="{isLoading}"
-            :disabled="isLoading"
-            class="button-spinner-data"
-            style="padding:1.5rem;color:#cf2d59;border-radius: 5px;border: 1px solid #cf2d59;"
-          >
-            Commencer
-          </button-spinner>
-        </div>
-      </center>
+      </nuxt-link>
+    </div>
 
-      <footer>
-      </footer>
-    </section>
-    <section id="dropbox">
-      <header>
-        <div>
-          <i className="fab fa-dropbox"></i>
-        </div>
-        <i className="las la-ellipsis-v"></i>
-      </header>
-      <h4>Dropbox</h4>
-      <footer>
-        <div className="stat">
-          {{DATA}}
-        </div>
-      </footer>
-    </section>
 
   </div>
 </template>
 
 <script>
-import axios from "axios"
-import ButtonSpinner from 'vue-button-spinner'
-
 
 export default {
   name: "Accueil",
-  components: {
-    ButtonSpinner
-  },
   data() {
     return {
-      DATA: [],
-      progress: 0,
-      completed: false,
-      tempo: 50,
-      isLoading: false,
-      isActive: false,
-      message : ""
+      applications : [
+        {
+          "name": "extractDataProfileLinkedIn",
+          "title": 'extraire les données du profil linkedin',
+          "description": "Card description with lots of great facts and interesting details."
+        },
+        {
+          "name": "connectProfilMoreMessageLinkedin",
+          "title": "connecter profil + message linkedin",
+          "description": "Card description with lots of great facts and interesting details."
+        },
+      ]
     };
   },
-  methods: {
-    async scrappingDataLinkedin() {
-      this.isActive = true
-      this.isLoading = true
-      await axios.get('http://localhost:7000/scrappin-data-linkedin')
-        .then((response) => {
-          this.DATA = response.data
-          this.timer(this.tempo)
-          this.isActive = false
-          this.isLoading = false
-          this.restart()
-        }).catch((e) => {
-          return `Erreur ${e}`
-        })
-
-    },
-
-    timer: function (tempo) {
-      let vm = this;
-      let setIntervalRef = setInterval(function () {
-        vm.progress++;
-        if (vm.progress === 100) {
-          clearInterval(setIntervalRef);
-          vm.completed = true;
-        }
-      }, tempo);
-    },
-    restart: function () {
-      this.completed = false;
-      this.progress = 0;
-      this.timer(this.tempo);
-    }
-  }
 }
 </script>
 
 <style scoped>
-.bar {
+.container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  margin: 1rem;
-  width: 97%;
-  height: 1em;
-  border-radius: 0.5em;
-  position: relative;
-  background: #f2f2f2;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.bar .percentage {
-  position: relative;
-  font-size: 1em;
-  background: #cf2d59;
-  height: 1em;
-  border-radius: 0.5em
+h5.title {
+  color: black !important;
+  font-size: 11px;
+  line-height: 24px;
+  margin-bottom: 4px;
 }
 
-.has-tip:before,
-.has-tip:after {
+h4.title {
+  color: black !important;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+p.description{
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  color: black !important;
+}
+
+.position{
+  margin-top: 3rem;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #CD3D73;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card1 {
+  display: block;
+  position: relative;
+  max-width: 262px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.card1:before {
   content: "";
   position: absolute;
-  opacity: 0;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: #CD3D73;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
 }
 
-.has-tip:before {
-  bottom: -10px;
-  right: -5px;
-  border: 5px solid;
-  border-color: transparent transparent #cf2d59 transparent;
-  transition: opacity 0.1s;
+.card1:hover:before {
+  transform: scale(21);
 }
 
-button-spinner.barre-loading {
-  position: relative;
-  padding: 1rem;
-  background-color: #cf2d59;
-  color: #ffffff;
-  border-radius: 5px;
-  height: 3rem;
-  left: 21rem;
-  top: 2rem;
-
-}
-
-
-.has-tip:after {
-  content: attr(data-perc);
-  bottom: 0;
-  right: 0;
-  white-space: nowrap;
-  padding: 0.6em 1em;
-  border-radius: 2em;
-  line-height: 1;
-  color: #fff;
-  background: #cf2d59;
-  transform: translateX(50%) translateY(100%);
-  transition: transform 0.2s, opacity 0.1s;
-}
-
-.has-tip:hover:before,
-.has-tip.active:before {
-  opacity: 1;
-}
-
-.has-tip:hover:after,
-.has-tip.active:after {
-  opacity: 1;
-  transform: translateX(50%) translateY(100%) translateY(10px);
-}
-
-::selection {
-  color: #fff;
-  background: #664AFF;
-}
-
-.wrapper .search-input {
-  background: #fff;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-}
-
-.search-input input {
-  height: 43px;
-  padding: 1px;
-  font-size: 18px;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-}
-
-.search-input.active input {
-  border-radius: 5px 5px 0 0;
-}
-
-.search-input .autocom-box {
-  padding: 0;
-  opacity: 0;
-  pointer-events: none;
-  max-height: 280px;
-  overflow-y: auto;
-}
-
-.search-input.active .autocom-box {
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.autocom-box li {
-  list-style: none;
-  padding: 8px 12px;
-  display: none;
-  width: 100%;
-  cursor: default;
-  border-radius: 3px;
-}
-
-.search-input.active .autocom-box li {
-  display: block;
-}
-
-.autocom-box li:hover {
-  background: #efefef;
-}
-
-.search-input .icon {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 55px;
-  width: 55px;
-  text-align: center;
-  line-height: 55px;
-  font-size: 20px;
-  color: #644bff;
-  cursor: pointer;
-}
-
-.vue-btn:hover {
-  background: #cf2d59;
+.card1:hover p {
+  transition: all 0.3s ease-out;
   color: #ffffff !important;
 }
 
+.card1:hover h3 {
+  transition: all 0.3s ease-out;
+  color: #ffffff !important;
+}
 
 </style>

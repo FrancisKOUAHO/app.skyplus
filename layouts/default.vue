@@ -13,14 +13,7 @@
         </div>
       </header>
       <section class="main-container">
-        <div class="more-memory">
-          <img src="https://drive.google.com/uc?id=1w9g2YfmhOJ5sntZroDP7dZhVmDHBHykH" alt=""/>
-          <h3>Comment ça marche ?</h3>
-          <p>In addition to our automtic backup feature, you can experience integration with other well-known storage
-            sites or application.<br/>Only that ? Oh no, there are many more.</p>
-          <button>Mise à niveau immédiate</button>
-        </div>
-          <nuxt/>
+        <nuxt/>
       </section>
     </main>
     <navigations-folders/>
@@ -249,7 +242,7 @@ main > header button {
   font-family: "Poppins";
   color: #000;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-right: 20px;
   float: right;
   background: #fff;
@@ -767,23 +760,22 @@ tr:nth-child(3) td > div {
 }
 
 #smart-view {
-  position: absolute;
+
   width: 330px;
-  bottom: -50px;
-  right: -50px;
   backdrop-filter: blur(2px);
   border-radius: 20px;
   padding: 30px;
   background: radial-gradient(farthest-side at top left, #fef7ea, transparent), radial-gradient(farthest-side at top right, #ffe7eb, transparent), radial-gradient(farthest-side at bottom left, #f8e9f1, transparent), radial-gradient(farthest-corner at bottom right, #f6e6f0, transparent), radial-gradient(circle farthest-side, #fbeaef, transparent);
   padding-top: 90px;
   text-align: center;
+  margin-top: 88%;
 }
 
 #smart-view img {
   position: absolute;
   width: 180px;
-  top: -100px;
-  left: 80px;
+  top: 53%;
+  left: 28%;
 }
 
 #smart-view h2 {
@@ -810,7 +802,7 @@ tr:nth-child(3) td > div {
   color: #fff;
   margin-top: 10px;
   background: #cf2d59;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 8px 20px;
 }
 

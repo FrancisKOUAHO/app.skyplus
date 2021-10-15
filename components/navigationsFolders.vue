@@ -43,7 +43,7 @@
       </div>
     </section>
     <section id="smart-view">
-      <img src="/folder-open-solid.svg">
+      <img src="/folder-open-solid.svg" alt="">
       <h2>Essayez Smart Backup maintenant !</h2>
       <p>Ne vous inquiétez plus de perdre des fichiers</p>
       <button>Commencez</button>
@@ -63,18 +63,7 @@ export default {
   },
   methods: {
     downloadExport() {
-      axios.get('http://localhost:7000/export-data', {
-        responseType: 'blob'
-      }).then((response) => {
-        const link = document.createElement('a');
-
-        link.href = window.URL.createObjectURL(
-          new Blob([response.data])
-        );
-        link.setAttribute('download', 'report.xlsx');
-        document.body.appendChild(link);
-        link.click();
-      });
+      console.log('downloadExport')
     }
   },
 
