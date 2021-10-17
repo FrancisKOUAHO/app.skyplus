@@ -35,7 +35,7 @@
             <td>Status</td>
             <td>Tags</td>
             <td>
-              <i v-for="icon in icons" :key="icon.id" :class="[{ active : active_el == icon.id}, [icon.classStyle]]" @click="activate(icon.id)"></i>
+              <i v-for="icon in icons" :key="icon.id" :class="[{ active : active_el === icon.id}, [icon.classStyle]]" @click="activate(icon.id)"></i>
             </td>
           </tr>
           </tbody>

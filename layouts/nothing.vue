@@ -14,7 +14,7 @@ export default {
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: "poppins";
+  font-family: "poppins",serif;
   background: var(--background);
   color: var(--color);
   letter-spacing: 1px;
