@@ -24,7 +24,7 @@
       <center>
         <div class="hello">
           <h5 v-if="isActive">message de statut : {{ message }}</h5>
-          <h5 v-v-if="!isActive" style="color:#cf2d59;">message de statut : Cliquer pour commencer le scrapping</h5>
+          <h5 v-if="!isActive" style="color:#cf2d59;">message de statut : Cliquer pour commencer le scrapping</h5>
           <button-spinner
             @click.native="scrappingDataLinkedin"
             v-bind="{isLoading}"
@@ -83,7 +83,7 @@ export default {
     async scrappingDataLinkedin() {
       this.isActive = true
       this.isLoading = true
-      await axios.get('http://localhost:7000/scrappin-data-linkedin')
+      await axios.get('http://localhost:7000/extract/extract-data-profile-linkedin')
         .then((response) => {
           this.DATA = response.data
           this.message = response.data.message
@@ -94,7 +94,9 @@ export default {
           return `Error ${e}`
         })
     },
-
+    beforeCreate() {
+      this.scrappingDataLinkedin()
+    },
     timer: function (tempo) {
       let vm = this;
       let setIntervalRef = setInterval(function () {
@@ -117,13 +119,13 @@ export default {
 <style scoped>
 .bar {
   display: flex;
-  margin: 1rem;
-  width: 97%;
+  width: 94%;
   height: 1em;
   border-radius: 0.5em;
   position: relative;
   background: #f2f2f2;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1)
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  margin: 1rem 1rem 1rem 4%;
 }
 
 .bar .percentage {

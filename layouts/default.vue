@@ -193,7 +193,7 @@ main > header button {
   width: 100%;
   height: 790px;
   background: radial-gradient(farthest-side at top left, #f4faff, transparent), radial-gradient(farthest-side at top right, #f4e7fc, transparent), radial-gradient(farthest-side at bottom left, #fffbf5, transparent), radial-gradient(farthest-corner at bottom right, #fef0f1, transparent), radial-gradient(circle farthest-side, #fbeaef, transparent);
-  padding: 30px;
+  padding: 11px;
 }
 
 .main-container div {
@@ -262,7 +262,7 @@ main > header button {
   width: 100%;
   background: white;
   border-radius: 20px;
-  height: 17rem;
+  height: 24rem;
   margin-top: 20px;
 }
 

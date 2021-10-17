@@ -33,13 +33,13 @@ export default {
       applications : [
         {
           "name": "extractDataProfileLinkedIn",
-          "title": 'extraire les données du profil linkedin',
-          "description": "Card description with lots of great facts and interesting details."
+          "title": 'Données disponibles dans les profils LinkedIn',
+          "description": "Récupérez toutes les données disponibles dans les profils LinkedIn, y compris les e-mails !"
         },
         {
           "name": "connectProfilMoreMessageLinkedin",
-          "title": "connecter profil + message linkedin",
-          "description": "Card description with lots of great facts and interesting details."
+          "title": "Suivi automatique + message sur LinkedIn",
+          "description": "Suivez automatiquement une liste de profils + message sur LinkedIn."
         },
       ]
     };
